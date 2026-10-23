@@ -20,6 +20,8 @@ But the applications built on these modules keep running, and their developers s
 
 We stand on the shoulders of the original authors. Their work, license and credit stay front and center in every project here. We are not competing with anyone. We are continuing their work so that every CFML developer can keep using it, whatever engine they run.
 
+modules4cf is an independent, engine-neutral CFML community project. It is **not a Lucee project**: some contributors come from around Lucee, but the organization lives outside the Lucee org and is open to everyone, whatever CFML engine they use.
+
 ## 📦 Modules
 
 | Module | Based on | Description | Engines tested in CI | ForgeBox |
@@ -63,17 +65,20 @@ Or add it to your `box.json`:
 If a module isn't available on ForgeBox under its `*4cf` name yet, you can install it straight from GitHub. CommandBox supports this out of the box ([Git endpoint docs](https://commandbox.ortusbooks.com/package-management/code-endpoints/git)):
 
 ```bash
+# A release tag (GitHub shortcut), recommended
+box install modules4cf/orm4cf#v5.2.1
+
 # Latest code from the default branch (GitHub shortcut)
 box install modules4cf/orm4cf
 
 # A specific tag, branch or commit
-box install git+https://github.com/modules4cf/orm4cf.git#v5.2.0
+box install git+https://github.com/modules4cf/orm4cf.git#v5.2.1
 ```
 
 You can also install a release zip from [GitHub Releases](https://github.com/modules4cf/orm4cf/releases) ([HTTP(S) endpoint docs](https://commandbox.ortusbooks.com/package-management/code-endpoints/http-s)):
 
 ```bash
-box install https://github.com/modules4cf/orm4cf/releases/download/v5.2.0/orm4cf-5.2.0.zip
+box install https://github.com/modules4cf/orm4cf/releases/download/v5.2.1/orm4cf-5.2.1.zip
 ```
 
 The same endpoints work as `box.json` dependencies:
@@ -81,7 +86,7 @@ The same endpoints work as `box.json` dependencies:
 ```json
 {
     "dependencies": {
-        "orm4cf": "git+https://github.com/modules4cf/orm4cf.git#v5.2.0"
+        "orm4cf": "git+https://github.com/modules4cf/orm4cf.git#v5.2.1"
     }
 }
 ```

@@ -21,6 +21,9 @@ open-source CFML modules that are no longer available, or no longer supported on
 so they keep working on **all** CFML engines. Every module keeps the original license (mostly
 Apache 2.0) and credits the original project and authors in its README and `NOTICE`.
 
+modules4cf is an independent, engine-neutral CFML community project. It is **not a Lucee project**
+and lives outside the Lucee organization.
+
 modules4cf is not affiliated with, sponsored by or endorsed by Ortus Solutions, Corp. ColdBox and
 cborm are Ortus trademarks and are only used for attribution.
 
@@ -51,24 +54,27 @@ Modules are installed with [CommandBox](https://commandbox.ortusbooks.com/).
 
 - **Not on ForgeBox yet.** No modules4cf module is published on ForgeBox yet, so `box install orm4cf`
   does not work today. It will once the module is published.
-- **No modules4cf release tags yet.** orm4cf has not had its first release (the planned first one is
-  `v5.2.0`), so there are no release zips and no `#v5.2.0` tag yet. orm4cf still carries the tags it
-  inherited from cborm (`v5.1.0` and older, `v6.0.0-beta.*`). These point to the original cborm code,
-  **without** the cross-engine fixes. Don't pin them.
-- Until the first release, install from the default branch: `box install modules4cf/orm4cf`.
+- **Released on GitHub.** orm4cf has GitHub releases (latest: `v5.2.1`) with the module zip attached
+  as `orm4cf-<version>.zip`. Check <https://github.com/modules4cf/orm4cf/releases> for the newest tag.
+  orm4cf also still carries tags it inherited from cborm (`v5.1.0` and older, `v6.0.0-beta.*`). These
+  point to the original cborm code, **without** the cross-engine fixes. Don't pin them.
+- Install a release tag: `box install modules4cf/orm4cf#v5.2.1`.
 
 ### From GitHub (works today)
 
 ```bash
-# Latest code from the default branch (GitHub shortcut)
+# A release tag (GitHub shortcut), recommended
+box install modules4cf/orm4cf#v5.2.1
+
+# The same with the full git URL (any tag, branch or commit works)
+box install git+https://github.com/modules4cf/orm4cf.git#v5.2.1
+
+# A release zip from GitHub Releases
+# pattern: https://github.com/modules4cf/orm4cf/releases/download/v<version>/orm4cf-<version>.zip
+box install https://github.com/modules4cf/orm4cf/releases/download/v5.2.1/orm4cf-5.2.1.zip
+
+# Latest code from the default branch (unreleased, not for production)
 box install modules4cf/orm4cf
-
-# A specific tag, branch or commit (once release tags exist)
-box install git+https://github.com/modules4cf/orm4cf.git#v5.2.0
-
-# A release zip from GitHub Releases (once releases exist):
-# copy the zip's URL from https://github.com/modules4cf/orm4cf/releases
-box install <zip URL from the release page>
 ```
 
 The same endpoints work as `box.json` dependencies:
@@ -76,7 +82,7 @@ The same endpoints work as `box.json` dependencies:
 ```json
 {
     "dependencies": {
-        "orm4cf": "git+https://github.com/modules4cf/orm4cf.git#v5.2.0"
+        "orm4cf": "git+https://github.com/modules4cf/orm4cf.git#v5.2.1"
     }
 }
 ```
@@ -115,8 +121,6 @@ Each module can ship its own skill with API details. Use it for anything beyond 
 
 - **orm4cf** (cborm 5.x API, Hibernate ORM services, Active Record, criteria queries):
   `https://raw.githubusercontent.com/modules4cf/orm4cf/main/skills/orm4cf/SKILL.md`
-  (until that skill is merged, use the orm4cf [readme](https://github.com/modules4cf/orm4cf#readme)
-  and the [cborm docs](https://coldbox-orm.ortusbooks.com/), whose API is the same)
 
 ## Reporting issues and contributing
 
