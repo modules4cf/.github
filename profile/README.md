@@ -99,6 +99,17 @@ Each module's README lists its requirements and any setup steps specific to that
 
 Both are maintained by [Ortus Solutions](https://www.ortussolutions.com). Thank you to them for these tools.
 
+## 🤖 AI assistants and skills
+
+Using an AI coding assistant? We publish **skill files**: short, structured instructions in the open [Agent Skills](https://agentskills.io) format (`SKILL.md`) that tell an assistant how our modules really work, so it gives you correct install steps and API answers instead of guessing from outdated docs.
+
+* **[modules4cf skill](https://github.com/modules4cf/.github/blob/main/skills/modules4cf/SKILL.md)**: the org, the `*4cf` naming and how to install our modules.
+  Raw URL: `https://raw.githubusercontent.com/modules4cf/.github/main/skills/modules4cf/SKILL.md`
+* **[orm4cf skill](https://github.com/modules4cf/orm4cf/blob/main/skills/orm4cf/SKILL.md)**: services, Active Record, criteria queries and migrating from cborm.
+  Raw URL: `https://raw.githubusercontent.com/modules4cf/orm4cf/main/skills/orm4cf/SKILL.md`
+
+To use one, point your assistant at the raw URL, or copy the skill folder (for example `skills/orm4cf/`) into your project's or your assistant's skills folder. Spotted something wrong in a skill? Issues and PRs are welcome, just like for code.
+
 ## 🤝 Get involved
 
 **This is the heart of modules4cf. It is a project of the CFML community, and it only works if we all build it together.**
